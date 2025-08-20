@@ -1,0 +1,392 @@
+/* Reset básico: tira margens e paddings padrões e garante que tudo seja medido com box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    background: linear-gradient(90deg, rgb(111, 17, 154)20%, rgba(3, 16, 253, 0.814) 100%);
+    /* fundo com gradiente roxo -> azul */
+    background-size: 100% 100%;
+    font-family: 'Poppins', sans-serif;
+    /* fonte padrão */
+    color: #333;
+    /* cor padrão do texto */
+    font-weight: 400;
+}
+
+
+/* Navbar */
+
+.navbar {
+  position: fixed; /* fixa no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 1000; /* fica na frente do resto */
+  display: flex; /* layout em linha */
+  overflow: visible;
+  justify-content: space-between;
+  /* logo de um lado, menu do outro */
+  
+  /* centraliza verticalmente */
+
+  /* dá mais espaço interno */
+  background: linear-gradient(120deg, rgb(97, 10, 112)10%, rgb(24, 32, 196) 100%);
+  /* cantos arreondados */
+  padding-top: 8px;
+  /* centraliza horizontalmente a barra */
+  /* ajusta o tamanho ao conteúdo */
+  transition: all 0.3s ease; /* efeito suave */
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+/* Dropdown conteudo (escondiodo) */
+.dropdown-content {
+  display: block; /* invisível inicialmente */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px); /* começa levemente deslocado */
+  transition: opacity 0.4s ease, transform 0.4 ease, visibility 0.4s;
+  position: absolute;
+  margin-right: 1px;
+  min-width: 137px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background: #4c30bb;
+  color: #FFF;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mostra o dropdown quando passa o mouse */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  /* volta pro lugar original */
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin-left: 0 !important;
+  /* garante alinhamento certinho */
+}
+
+/* muda cor dos links dropdown no hover*/
+.dropdown-content a:hover {
+  background-color: rgba(119, 85, 255, 0.868);
+  border-radius: 15px;
+  
+}
+
+/* Container geral centralizado*/
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+.nav-container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* altura da navbar */
+}
+
+.logo img {
+  height: 50px;
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/*links da navbar sem linha embaixo*/
+nav a {
+  text-decoration: none;
+}
+
+.navbar .menu a {
+  color: #ffffff;
+  letter-spacing: 0.5px; /* espaçamento entre letras */
+  transition: 0.4s;
+}
+
+
+.dropdown:hover {
+  border-bottom: 2px;  
+}
+
+/* Curso Container */
+.curso-block {
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.curso-container {
+    display: flex;
+    gap: 20px;
+    background: #ffffffda;
+    border-radius: 15px;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.curso-logo {
+    width: 250px;
+    height: auto;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.curso-info {
+    flex: 1;
+    margin: 20px;
+}
+
+.curso-info h3 {
+    color: #0d0d0d;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+}
+
+.curso-info p {
+    margin: 6px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Área expandida */
+.more {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, margin-top 0.3s ease;
+}
+
+.toggle { display: none; }
+
+.toggle:checked ~ .more {
+    max-height: 1000px;
+    margin-top: 10px;
+}
+
+/* Botão ver mais */
+.btn-vermais {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 0;
+    background: transparent;
+    color: #6c63ff;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    font-size: 1rem;
+    transition: color .3s ease;
+}
+
+.btn-vermais:hover { color: #574bdb; }
+
+.btn-vermais::after { content: " →"; }
+.toggle:checked ~ .btn-vermais::after { content: " ↑"; }
+
+ /*css da porra toda*/
+
+
+/*Footer*/
+
+.footer {
+    background: #1b1b1b;
+    color: #FFF;
+    padding: 40px 20px 20px;
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #6943ff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #cfcfe6;
+}
+
+.footer-section a:hover {
+    color: #3418d3;
+}
+
+.footer-section ul li a:hover {
+    color: #5d50b99e;
+}
+
+.footer-section img {
+    height: 44px;
+    justify-content: space-between;
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Ícones das redes sociais */
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+    /* deixa branco */
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+    /* aumenta um pouco no hover */
+}
+
+/* Parte de baixo do footer */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/*home css*/
+
+
+/* Introdução */
+#intro {
+    width: 100%;
+    margin: 0;              /* remove margens automáticas */
+    padding: 40px 20px;     /* deixa um pouco de espaço interno */
+    background-color: #00000090; /* cor do retângulo */
+    border-radius: 0;        /* remove arredondamento, se quiser cantos retos */
+    box-shadow: none;        /* opcional: remove sombra se quiser retângulo puro */
+}
+
+
+#intro h1 {
+    margin-bottom: 15px;
+    color: #f2eff4;
+    text-align: center; /* centraliza o texto */
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+#intro p {
+    color: #f4f0f0;          /* cor do texto */
+    font-size: 18px;         /* tamanho da fonte */
+    font-family: 'Poppins', sans-serif; /* tipo da fonte */
+    line-height: 1.6;        /* espaçamento entre linhas */
+    text-align: center;
+}
+
+
+/* Certificações - blocos */
+.cert-block {
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+.cert-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    gap: 20px;
+}
+
+.cert-logo {
+    width: 120px;
+    height: auto;
+}
+
+.cert-info {
+    flex: 1;
+}
+
+.cert-info h3 {
+    margin-bottom: 10px;
+    color: #4b0082;
+}
+
+.cert-list {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+

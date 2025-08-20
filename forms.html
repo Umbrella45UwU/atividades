@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posicionamento do elemento DIV</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+
+    .divs {
+      width: 200px;
+      height: 150px;
+      margin: 10px;
+      padding: 10px;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .divAbsolute {
+      background-color: rgb(44, 241, 241);
+      position: absolute;
+      top: 80px;
+      left: 30px;
+    }
+    .divRelative {
+      background-color: rgb(244, 210, 165);
+      position: relative;
+      top: 20px;
+      left: 40px;
+      color: #000;
+    }
+    .divFixed {
+      background-color: rgb(155, 236, 136);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+    .divStatic {
+      background-color: rgb(34, 65, 190);
+      position: static;
+    }
+    .divSticky {
+      background-color: rgb(196, 56, 56);
+      position: sticky;
+      top: 0;
+      left: 500px;
+    }
+
+    .divAlignCenter {
+      margin: 20px auto;
+      width: 80%;
+      height: 200px;
+      background-color: rgb(245, 119, 231);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .divEsquerda {
+      background-color: blueviolet;
+      float: left;
+      width: 30%;
+      height: 100%;
+    }
+    .divDireita {
+      background-color: darkblue;
+      float: right;
+      width: 30%;
+      height: 100%;
+    }
+    .clear {
+      clear: both;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Formas de posicionamento com DIV</h1>
+
+  <div class="divs divSticky">Posicionamento sticky</div>
+  <div class="divs divRelative">Posicionamento relative</div>
+  <div class="divs divFixed">Posicionamento fixed</div>
+  <div class="divs divStatic">Posicionamento static</div>
+  <div class="divs divAbsolute">Posicionamento absolute</div>
+
+  <div class="divAlignCenter">
+    Posicionamento centralizado
+    <div class="divEsquerda">Posicionamento Float a Esquerda</div>
+    <div class="divDireita">Posicionamento Float a Direito</div>
+    <p class="clear">Texto abaixo após limpar float</p>
+  </div>
+
+</body>
+</html>

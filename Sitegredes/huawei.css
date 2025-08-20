@@ -1,0 +1,498 @@
+/* Reset básico: tira margens e paddings padrões e garante que tudo seja medido com box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+  background: linear-gradient(90deg, rgb(111, 17, 154)20%, rgba(3, 16, 253, 0.814) 100%); /* fundo com gradiente roxo -> azul */
+  background-size: 100% 100%;
+  font-family: 'Poppins', sans-serif; /* fonte padrão */
+  color: #333; /* cor padrão do texto */
+  font-weight: 400;
+}
+
+.navbar {
+  position: fixed; /* fixa no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 1000; /* fica na frente do resto */
+  display: flex; /* layout em linha */
+  overflow: visible;
+  justify-content: space-between;
+  /* logo de um lado, menu do outro */
+  
+  /* centraliza verticalmente */
+
+  /* dá mais espaço interno */
+  background: linear-gradient(120deg, rgb(97, 10, 112)10%, rgb(24, 32, 196) 100%);
+  /* cantos arreondados */
+  padding-top: 8px;
+  /* centraliza horizontalmente a barra */
+  /* ajusta o tamanho ao conteúdo */
+  transition: all 0.3s ease; /* efeito suave */
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+}
+
+/* Dropdown conteudo (escondiodo) */
+.dropdown-content {
+  display: block; /* invisível inicialmente */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px); /* começa levemente deslocado */
+  transition: opacity 0.4s ease, transform 0.4 ease, visibility 0.4s;
+  position: absolute;
+  margin-right: 1px;
+  min-width: 137px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background: #4c30bb;
+  color: #FFF;
+  transition: background 0.5s, color 0.5s, transform 0.5s;
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mostra o dropdown quando passa o mouse */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  /* volta pro lugar original */
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin-left: 0 !important;
+  /* garante alinhamento certinho */
+}
+
+/* muda cor dos links dropdown no hover*/
+.dropdown-content a:hover {
+  background-color: rgba(119, 85, 255, 0.868);
+  border-radius: 15px;
+  
+}
+
+.nav-container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* altura da navbar */
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/*links da navbar sem linha embaixo*/
+nav a {
+  text-decoration: none;
+}
+
+.navbar .menu a {
+  color: #ffffff;
+  letter-spacing: 0.5px; /* espaçamento entre letras */
+  transition: 0.4s;
+}
+
+
+.dropdown:hover {
+  border-bottom: 2px;  
+}
+
+/* Container geral centralizado*/
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Layout em grid para os cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Card dos projetos */
+.card {
+  background: rgb(232, 13, 13);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.card-content a {
+  color: rgb((40, 47, 180) 100%);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-content a:hover {
+  text-decoration: underline;
+}
+
+/* Carrossel de notícias */
+
+.card {
+  background: #fff;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+/*Footer*/
+
+.footer {
+  background: #1b1b1b;
+  color: #FFF;
+  padding: 40px 20px 20px;
+
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: #6943ff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #cfcfe6;
+}
+
+.footer-section a:hover {
+  color: #3418d3;
+}
+
+.footer-section ul li a:hover {
+  color: #5d50b99e;
+}
+
+.footer-section img {
+  height: 44px;
+  justify-content: space-between;
+  margin-left: 12px;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  display: inline-block;
+}
+/* Ícones das redes sociais */
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: invert(100%); /* deixa branco */
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* aumenta um pouco no hover */
+}
+
+/* Parte de baixo do footer */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Titulo das Participacoes*/ 
+
+/* Centralizar e dar destaque na seção */
+#huawei-gredes {
+    max-width: 1400px; /* aumenta o limite horizontal */
+    width: 95%;         /* ocupa quase toda a tela */
+    margin: 40px auto;  /* espaço ao redor */
+    padding: 50px 20px;  /* mais espaço interno */
+    border-radius: 15px;  /* cantos arredondados */
+    text-align: center;  /* centraliza o texto */
+    background-color: rgba(255, 255, 255, 0.223); /* fundo suave transparente */
+}
+
+/* Título maior e chamativo */
+#huawei-gredes h2 {
+    font-size: 2.5rem;          /* aumenta título */
+    color: #ffffff;             /* cor branca para contraste */
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    
+}
+
+/* Texto de introdução */
+#huawei-gredes .intro {
+    font-size: 1.2rem;          /* deixa mais legível */
+    color: #e0e0e0;             /* cinza claro */
+    margin-bottom: 40px;
+    line-height: 1.6;           /* espaçamento entre linhas */
+}
+
+/* Botão toggle */
+.btn-toggle {
+  color: #f8f8fa;
+  margin-left: 20px;
+  padding: 10px 25px;
+  background: #3418d3;
+  border-radius: 50px;
+  font-size: 14px;
+  transition: 0.3s;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.btn-toggle:hover {
+  background: rgba(32, 5, 66, 0.927);
+  color: #ffffff;
+}
+
+/* Esconde o checkbox */
+#toggle-participacoes {
+  display: none;
+  align-items: center;
+}
+
+/* Grid geral */
+.participacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 em 2 */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Grid extras escondida inicialmente */
+.participacoes-grid.extras {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+/* Ao marcar checkbox, extras aparecem */
+#toggle-participacoes:checked ~ .participacoes-grid.extras {
+  max-height: 2000px; /* alto o suficiente para caber todos */
+}
+
+/* Cards */
+.participacao {
+    background: #d8b3ff; /* lilás claro */
+    border-radius: 15px;
+    padding: 20px;
+    width: 600px; /* largura fixa */
+    min-height: 180px; /* altura mínima, mas pode crescer */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    word-wrap: break-word; /* quebra palavras longas */
+    overflow-wrap: break-word; /* garante compatibilidade */
+    text-align: left;
+}
+
+.participacao img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  max-height: 70%;
+}
+
+/* gjfjg */ 
+
+/* Extras inicialmente escondidas */
+.participacoes-grid.extras {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.8s ease, opacity 0.8s ease;
+}
+
+/* Mostrar extras quando checkbox marcado */
+#toggle-participacoes:checked ~ .participacoes-grid.extras {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+/* Botão visível inicialmente */
+.btn-toggle {
+  display: block;
+  background: rgba(58, 4, 124, 0.927);
+  color: #f2eded;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px auto;
+  width: fit-content;
+  transition: opacity 0.5s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* Botão some quando checkbox marcado */
+#toggle-participacoes:checked ~ .btn-toggle {
+  opacity: 0;
+  pointer-events: none; /* impede clicar novamente */
+}
+
+
+/* Seção breve sobre a Huawei */
+#sobre-huawei {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container-huawei {
+    background: rgb(255, 255, 255); /* lilás suave */
+    border-radius: 20px;
+    padding: 30px 25px;
+    max-width: 900px;
+}
+
+.huawei-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.huawei-text {
+    flex: 1 1 300px; /* ocupa espaço restante */
+    text-align: left;
+}
+
+.huawei-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #de2a2a;
+}
+
+.huawei-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.huawei-image {
+    flex: 0 0 150px; /* largura fixa para a imagem */
+    display: flex;
+    justify-content: center;
+}
+
+.huawei-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .huawei-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .huawei-text {
+        text-align: center;
+    }
+}
+
+.logo img {
+  height: 50px;
+}

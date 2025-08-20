@@ -1,0 +1,48 @@
+
+body {
+  background-color: #e0f7fa;
+  font-family: Arial, sans-serif;
+  color: #004d40;
+  padding: 20px;
+}
+
+h1 {
+  color: #00796b;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #004d40;
+  font-weight: bold;
+}
+
+.descricao {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#titulo-principal {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #004d40;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+img {
+  margin-top: 20px;
+  border-radius: 10px;
+}
